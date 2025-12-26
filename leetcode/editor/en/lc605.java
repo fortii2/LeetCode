@@ -1,4 +1,4 @@
-//You have a long flowerbed in which some of the plots are planted, and some 
+package leetcode.editor.en;//You have a long flowerbed in which some of the plots are planted, and some
 //are not. However, flowers cannot be planted in adjacent plots. 
 //
 // Given an integer array flowerbed containing 0's and 1's, where 0 means empty 
@@ -29,25 +29,28 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean canPlaceFlowers(int[] flowerbed, int n) {
+public class lc605 {
 
-        for (int i = 0; i < flowerbed.length; i++) {
-            if (flowerbed[i] == 1 ||
-                    (i - 1 >= 0 && flowerbed[i - 1] == 1) ||
-                    (i + 1 < flowerbed.length && flowerbed[i + 1] == 1)) {
-                continue;
+    class Solution {
+        public boolean canPlaceFlowers(int[] flowerbed, int n) {
+
+            for (int i = 0; i < flowerbed.length; i++) {
+                if (flowerbed[i] == 1 ||
+                        (i - 1 >= 0 && flowerbed[i - 1] == 1) ||
+                        (i + 1 < flowerbed.length && flowerbed[i + 1] == 1)) {
+                    continue;
+                }
+
+                flowerbed[i] = 1;
+                n--;
             }
 
-            flowerbed[i] = 1;
-            n--;
-        }
+            if (n <= 0) {
+                return true;
+            }
 
-        if (n <= 0) {
-            return true;
+            return false;
         }
-
-        return false;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

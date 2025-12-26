@@ -1,4 +1,4 @@
-//You are given two strings word1 and word2. Merge the strings by adding 
+package leetcode.editor.en;//You are given two strings word1 and word2. Merge the strings by adding
 //letters in alternating order, starting with word1. If a string is longer than the 
 //other, append the additional letters onto the end of the merged string. 
 //
@@ -50,25 +50,27 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public String mergeAlternately(String word1, String word2) {
-        int len = Math.max(word1.length(), word2.length());
-        int i = 0;
-        StringBuilder sb = new StringBuilder();
+public class lc1768 {
+    class Solution {
+        public String mergeAlternately(String word1, String word2) {
+            int len = Math.max(word1.length(), word2.length());
+            int i = 0;
+            StringBuilder sb = new StringBuilder();
 
-        while (i < len) {
-            if (i < word1.length()) {
-                sb.append(word1.charAt(i));
+            while (i < len) {
+                if (i < word1.length()) {
+                    sb.append(word1.charAt(i));
+                }
+
+                if (i < word2.length()) {
+                    sb.append(word2.charAt(i));
+                }
+
+                i++;
             }
 
-            if (i < word2.length()) {
-                sb.append(word2.charAt(i));
-            }
-
-            i++;
+            return sb.toString();
         }
-
-        return sb.toString();
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

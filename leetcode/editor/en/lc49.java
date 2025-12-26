@@ -1,8 +1,13 @@
-package main;
+package leetcode.editor.en;
 
 import java.util.*;
 
-public class GroupAnagrams49 {
+public class lc49 {
+    public static void main(String[] args) {
+        lc49 clazz = new lc49();
+        System.out.println(clazz.groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));
+    }
+
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> mapping = new HashMap<>();
 
@@ -21,10 +26,5 @@ public class GroupAnagrams49 {
         }
 
         return new ArrayList<>(mapping.values());
-    }
-
-    public static void main(String[] args) {
-        GroupAnagrams49 clazz = new GroupAnagrams49();
-        System.out.println(clazz.groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));
     }
 }

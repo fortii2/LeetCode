@@ -1,11 +1,13 @@
-package main;
+package leetcode.editor.en;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
 
 /**
  * top-K question. use min-heap. Priority queue is the Java implements.
  */
-public class TopKFrequentElements347 {
+public class lc347 {
     public int[] topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int num : nums) {

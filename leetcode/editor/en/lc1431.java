@@ -1,4 +1,4 @@
-//There are n kids with candies. You are given an integer array candies, where 
+package leetcode.editor.en;//There are n kids with candies. You are given an integer array candies, where
 //each candies[i] represents the number of candies the iᵗʰ kid has, and an integer 
 //extraCandies, denoting the number of extra candies that you have. 
 //
@@ -61,24 +61,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
-        List<Boolean> result = new ArrayList<>();
-        int greatest = candies[0];
+public class lc1431 {
+    class Solution {
+        public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+            List<Boolean> result = new ArrayList<>();
+            int greatest = candies[0];
 
-        for (int i = 0; i < candies.length; i++) {
-            greatest = Math.max(greatest, candies[i]);
-        }
-
-        for (int i = 0; i < candies.length; i++) {
-            if (candies[i] + extraCandies >= greatest) {
-                result.add(true);
-            } else {
-                result.add(false);
+            for (int i = 0; i < candies.length; i++) {
+                greatest = Math.max(greatest, candies[i]);
             }
-        }
 
-        return result;
+            for (int i = 0; i < candies.length; i++) {
+                if (candies[i] + extraCandies >= greatest) {
+                    result.add(true);
+                } else {
+                    result.add(false);
+                }
+            }
+
+            return result;
+        }
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

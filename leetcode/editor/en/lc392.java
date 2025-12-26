@@ -1,4 +1,4 @@
-//Given two strings s and t, return true if s is a subsequence of t, or false 
+package leetcode.editor.en;//Given two strings s and t, return true if s is a subsequence of t, or false
 //otherwise. 
 //
 // A subsequence of a string is a new string that is formed from the original 
@@ -35,31 +35,33 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean isSubsequence(String s, String t) {
-        if (s.length() == 0){
-            return true;
-        }
-        
-        if (t.length() == 0){
-            return false;
-        }
-        
-        int p = 0, q = 0;
-
-        while (q < t.length()) {
-            if (s.charAt(p) == t.charAt(q)) {
-                p++;
-
-                if (p >= s.length()) {
-                    return true;
-                }
+public class lc392 {
+    class Solution {
+        public boolean isSubsequence(String s, String t) {
+            if (s.length() == 0) {
+                return true;
             }
 
-            q++;
-        }
+            if (t.length() == 0) {
+                return false;
+            }
 
-        return false;
+            int p = 0, q = 0;
+
+            while (q < t.length()) {
+                if (s.charAt(p) == t.charAt(q)) {
+                    p++;
+
+                    if (p >= s.length()) {
+                        return true;
+                    }
+                }
+
+                q++;
+            }
+
+            return false;
+        }
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

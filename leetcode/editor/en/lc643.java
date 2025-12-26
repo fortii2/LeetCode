@@ -1,4 +1,4 @@
-//You are given an integer array nums consisting of n elements, and an integer 
+package leetcode.editor.en;//You are given an integer array nums consisting of n elements, and an integer
 //k. 
 //
 // Find a contiguous subarray whose length is equal to k that has the maximum 
@@ -34,22 +34,24 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public double findMaxAverage(int[] nums, int k) {
-        int result = 0;
-        int current = 0;
+public class lc643 {
+    class Solution {
+        public double findMaxAverage(int[] nums, int k) {
+            int result = 0;
+            int current = 0;
 
-        for (int i = 0; i < k; i++) {
-            current += nums[i];
-            result = current;
-        }
+            for (int i = 0; i < k; i++) {
+                current += nums[i];
+                result = current;
+            }
 
-        for (int i = k; i < nums.length; i++) {
-            current = current - nums[i - k] + nums[i];
-            result = Math.max(result, current);
+            for (int i = k; i < nums.length; i++) {
+                current = current - nums[i - k] + nums[i];
+                result = Math.max(result, current);
+            }
+
+            return (double) result / k;
         }
-        
-        return (double)result/k;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

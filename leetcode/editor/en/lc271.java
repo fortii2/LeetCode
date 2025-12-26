@@ -1,13 +1,13 @@
-package main;
+package leetcode.editor.en;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class EncodeAndDecodeStrings271 {
+public class lc271 {
 
     public static void main(String[] args) {
-        EncodeAndDecodeStrings271 clazz = new EncodeAndDecodeStrings271();
+        lc271 clazz = new lc271();
         String encoded = clazz.encode(List.of(new String[]{"hello", "world", "bro", "!"}));
         List<String> decoded = clazz.decode(encoded);
 

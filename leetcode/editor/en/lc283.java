@@ -1,4 +1,4 @@
-//Given an integer array nums, move all 0's to the end of it while maintaining 
+package leetcode.editor.en;//Given an integer array nums, move all 0's to the end of it while maintaining
 //the relative order of the non-zero elements. 
 //
 // Note that you must do this in-place without making a copy of the array. 
@@ -27,16 +27,18 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public void moveZeroes(int[] nums) {
-        int p = 0;
+public class lc283 {
+    class Solution {
+        public void moveZeroes(int[] nums) {
+            int p = 0;
 
-        for (int q = 0; q < nums.length; q++) {
-            if (nums[q] != 0) {
-                int temp = nums[p];
-                nums[p] = nums[q];
-                nums[q] = temp;
-                p++;
+            for (int q = 0; q < nums.length; q++) {
+                if (nums[q] != 0) {
+                    int temp = nums[p];
+                    nums[p] = nums[q];
+                    nums[q] = temp;
+                    p++;
+                }
             }
         }
     }

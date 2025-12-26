@@ -1,4 +1,4 @@
-//For two strings s and t, we say "t divides s" if and only if s = t + t + t + .
+package leetcode.editor.en;//For two strings s and t, we say "t divides s" if and only if s = t + t + t + .
 //.. + t + t (i.e., t is concatenated with itself one or more times).
 //
 // Given two strings str1 and str2, return the largest string x such that x
@@ -49,22 +49,25 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public String gcdOfStrings(String str1, String str2) {
-        if (!(str1 + str2).equals(str2 + str1)) {
-            return "";
+public class lc1071 {
+
+    class Solution {
+        public String gcdOfStrings(String str1, String str2) {
+            if (!(str1 + str2).equals(str2 + str1)) {
+                return "";
+            }
+
+            return str1.substring(0, gcd(str1.length(), str2.length()));
         }
 
-        return str1.substring(0, gcd(str1.length(), str2.length()));
-    }
+        public int gcd(int x, int y) {
+            if (y == 0) {
+                return x;
+            }
 
-    public int gcd(int x, int y) {
-        if (y == 0) {
-            return x;
+            return gcd(y, x % y);
         }
 
-        return gcd(y, x % y);
     }
-
 }
 //leetcode submit region end(Prohibit modification and deletion)

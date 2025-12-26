@@ -1,4 +1,4 @@
-//Given a binary array nums and an integer k, return the maximum number of 
+package leetcode.editor.en;//Given a binary array nums and an integer k, return the maximum number of
 //consecutive 1's in the array if you can flip at most k 0's. 
 //
 // 
@@ -32,16 +32,17 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int longestOnes(int[] nums, int k) {
-        int longest = 0;
-        int zeroCount = 0;
-        int left = 0;
+public class lc1004_1 {
+    class Solution {
+        public int longestOnes(int[] nums, int k) {
+            int longest = 0;
+            int zeroCount = 0;
+            int left = 0;
 
-        for (int right = 0; right < nums.length; right++) {
-            if (nums[right] == 0) {
-                zeroCount++;
-            }
+            for (int right = 0; right < nums.length; right++) {
+                if (nums[right] == 0) {
+                    zeroCount++;
+                }
 
 //            if (zeroCount > k) {
 //                while (left < nums.length && nums[left] != 0) {
@@ -51,16 +52,17 @@ class Solution {
 //                zeroCount--;
 //            }
 
-            while (zeroCount > k) {
-                if (nums[left] == 0) {
-                    zeroCount--;
+                while (zeroCount > k) {
+                    if (nums[left] == 0) {
+                        zeroCount--;
+                    }
+                    left++;
                 }
-                left++;
-            }
 
-            longest = Math.max(longest, right - left + 1);
+                longest = Math.max(longest, right - left + 1);
+            }
+            return longest;
         }
-        return longest;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

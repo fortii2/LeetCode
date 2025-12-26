@@ -1,8 +1,8 @@
-package main;
+package leetcode.editor.en;
 
 import java.util.Arrays;
 
-public class ValidAnagram242 {
+public class lc242 {
 
     public boolean isAnagram(String s, String t) {
         byte[] sBytes = s.getBytes();

@@ -1,4 +1,4 @@
-//Given an integer array nums, return true if there exists a triple of indices (
+package leetcode.editor.en;//Given an integer array nums, return true if there exists a triple of indices (
 //i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k]. If no such 
 //indices exists, return false. 
 //
@@ -44,22 +44,22 @@
 // Related Topics Array Greedy 👍 8760 👎 682
 
 
-import java.util.Arrays;
-
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean increasingTriplet(int[] nums) {
-        int min1 = Integer.MAX_VALUE;
-        int min2 = Integer.MAX_VALUE;
+public class lc334 {
+    class Solution {
+        public boolean increasingTriplet(int[] nums) {
+            int min1 = Integer.MAX_VALUE;
+            int min2 = Integer.MAX_VALUE;
 
-        // when arrive to else, means this number is bigger than current min1 and min2.
-        for (int num : nums) {
-            if (num <= min1) min1 = num;
-            else if (num <= min2) min2 = num;
-            else return true;
+            // when arrive to else, means this number is bigger than current min1 and min2.
+            for (int num : nums) {
+                if (num <= min1) min1 = num;
+                else if (num <= min2) min2 = num;
+                else return true;
+            }
+
+            return false;
         }
-
-        return false;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -1,8 +1,8 @@
-package main;
+package leetcode.editor.en;
 
 import java.util.HashMap;
 
-public class TwoSum1 {
+public class lc1 {
     public int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> set = new HashMap<>();
 

@@ -1,4 +1,4 @@
-//You are given an integer array nums and an integer k. 
+package leetcode.editor.en;//You are given an integer array nums and an integer k.
 //
 // In one operation, you can pick two numbers from the array whose sum equals k 
 //and remove them from the array. 
@@ -37,32 +37,31 @@
 // Related Topics Array Hash Table Two Pointers Sorting 👍 3504 👎 116
 
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int maxOperations(int[] nums, int k) {
-        Arrays.sort(nums);
-        int p = 0, q = nums.length - 1;
-        int result = 0;
+public class lc1679_2 {
+    class Solution {
+        public int maxOperations(int[] nums, int k) {
+            Arrays.sort(nums);
+            int p = 0, q = nums.length - 1;
+            int result = 0;
 
-        while (p < q) {
-            int now = nums[p] + nums[q];
-            if (now == k) {
-                p++;
-                q--;
-                result++;
-            } else if (now < k) {
-                p++;
-            } else {
-                q--;
+            while (p < q) {
+                int now = nums[p] + nums[q];
+                if (now == k) {
+                    p++;
+                    q--;
+                    result++;
+                } else if (now < k) {
+                    p++;
+                } else {
+                    q--;
+                }
             }
-        }
 
-        return result;
+            return result;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
+}

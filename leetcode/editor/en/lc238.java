@@ -1,6 +1,6 @@
-package main;
+package leetcode.editor.en;
 
-public class ProductofArrayExceptSelf238 {
+public class lc238 {
 
     public int[] productExceptSelf(int[] nums) {
         int[] results = new int[nums.length];

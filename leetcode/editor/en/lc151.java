@@ -1,4 +1,4 @@
-//Given an input string s, reverse the order of the words. 
+package leetcode.editor.en;//Given an input string s, reverse the order of the words.
 //
 // A word is defined as a sequence of non-space characters. The words in s will 
 //be separated by at least one space. 
@@ -52,17 +52,18 @@
 //
 // Related Topics Two Pointers String 👍 10151 👎 5499
 
-
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public String reverseWords(String s) {
-        String[] words = s.split("\\s+");
-        StringBuilder sb = new StringBuilder();
-        for (int i = words.length - 1; i >= 0; i--) {
-            sb.append(words[i]);
-            sb.append(" ");
+public class lc151 {
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public String reverseWords(String s) {
+            String[] words = s.split("\\s+");
+            StringBuilder sb = new StringBuilder();
+            for (int i = words.length - 1; i >= 0; i--) {
+                sb.append(words[i]);
+                sb.append(" ");
+            }
+            return sb.toString().trim();
         }
-        return sb.toString().trim();
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
