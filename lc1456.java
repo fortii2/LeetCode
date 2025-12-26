@@ -17,7 +17,7 @@ class Solution {
     }
 
     public int isVowel(char c){
-        if("aeiouAEIOU".indexOf(c) != -1){
+        if(c == 'a'|| c == 'e' || c == 'i' || c == 'o' || c == 'u'){
             return 1;
         }
         return 0;
