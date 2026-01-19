@@ -30,15 +30,17 @@ package leetcode.editor.en;//Given an integer array nums, move all 0's to the en
 public class lc283 {
     class Solution {
         public void moveZeroes(int[] nums) {
-            int p = 0;
+            int fast = 0, slow = 0;
 
-            for (int q = 0; q < nums.length; q++) {
-                if (nums[q] != 0) {
-                    int temp = nums[p];
-                    nums[p] = nums[q];
-                    nums[q] = temp;
-                    p++;
+            while (fast < nums.length) {
+                if (nums[fast] != 0) {
+                    nums[slow++] = nums[fast];
                 }
+                fast++;
+            }
+
+            while (slow < nums.length) {
+                nums[slow++] = 0;
             }
         }
     }
