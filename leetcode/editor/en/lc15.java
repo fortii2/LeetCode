@@ -5,48 +5,49 @@
  */
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 // @lc code=start
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> triples = new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
 
-        Map<Integer, List<List<Integer>>> twoSum = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                List<List<Integer>> temp = twoSum.getOrDefault(nums[i] + nums[j], new ArrayList<>());
+        Arrays.sort(nums);
 
-                List<Integer> pair = new ArrayList<>();
-                pair.add(i);
-                pair.add(j);
-
-                temp.add(pair);
-                twoSum.put(nums[i] + nums[j], temp);
-            }
+        if (nums[0] > 0) {
+            return result;
         }
 
         for (int i = 0; i < nums.length; i++) {
-            int target = 0 - nums[i];
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
 
-            if (twoSum.containsKey(target)) {
-                List<List<Integer>> values = twoSum.get(target);
+            int left = i + 1;
+            int right = nums.length - 1;
 
-                for (List<Integer> pair : values) {
-                    if (i != pair.getFirst() && i != pair.getLast()) {
-                        int[] cur = new int[] { nums[pair.getFirst()], nums[pair.getLast()], nums[i] };
-                        Arrays.sort(cur);
-                        triples.add(Arrays.stream(cur)
-                                .boxed()
-                                .collect(Collectors.toList()));
-                    }
+            while (left < right) {
+                int cur = nums[i] + nums[left] + nums[right];
+                if (cur < 0) {
+                    left++;
+                } else if (cur > 0) {
+                    right--;
+                } else {
+                    result.add(List.of(nums[i], nums[left], nums[right]));
+
+                    while (left < right && nums[left] == nums[left + 1])
+                        left++;
+
+                    while (left < right && nums[right] == nums[right - 1])
+                        right--;
+
+                    left++;
+                    right--;
                 }
             }
+
         }
 
-        return triples.stream()
-                .distinct()
-                .collect(Collectors.toList());
+        return result;
     }
 }
 // @lc code=end
